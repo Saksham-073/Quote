@@ -1,9 +1,9 @@
 const colors = [
-    { bg: 'linear-gradient(135deg, #667eea, #764ba2)', text: 'white' },
-    { bg: 'linear-gradient(135deg, #f093fb, #f5576c)', text: 'white' },
-    { bg: 'linear-gradient(135deg, #4facfe, #00f2fe)', text: 'white' },
-    { bg: 'linear-gradient(135deg, #43e97b, #38f9d7)', text: 'white' },
-    { bg: 'linear-gradient(135deg, #fa709a, #fee140)', text: 'white' },
+    { bg: 'linear-gradient(135deg, #667eea, #764ba2)', text: '#333' },
+    { bg: 'linear-gradient(135deg, #f093fb, #f5576c)', text: '#333' },
+    { bg: 'linear-gradient(135deg, #4facfe, #00f2fe)', text: '#333' },
+    { bg: 'linear-gradient(135deg, #43e97b, #38f9d7)', text: '#333' },
+    { bg: 'linear-gradient(135deg, #fa709a, #fee140)', text: '#333' },
     { bg: 'linear-gradient(135deg, #ff9a9e, #fecfef)', text: '#333' },
     { bg: 'linear-gradient(135deg, #a8edea, #fed6e3)', text: '#333' },
     { bg: 'linear-gradient(135deg, #84fab0, #8fd3f4)', text: '#333' }

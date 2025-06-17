@@ -66,18 +66,9 @@ main {
     100% { transform: rotate(360deg); }
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
 @keyframes fadeOut {
     from { opacity: 1; transform: translateY(0); }
     to { opacity: 0; transform: translateY(-20px); }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease forwards;
 }
 
 .fade-out {
@@ -100,7 +91,7 @@ figcaption {
 }
 
 figcaption::before {
-    content: "— ";
+    content: "~ ";
 }
 
 .buttons {
