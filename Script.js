@@ -1,13 +1,23 @@
-const colors = [
-    { bg: 'linear-gradient(135deg, #667eea, #764ba2)', text: '#333' },
-    { bg: 'linear-gradient(135deg, #f093fb, #f5576c)', text: '#333' },
-    { bg: 'linear-gradient(135deg, #4facfe, #00f2fe)', text: '#333' },
-    { bg: 'linear-gradient(135deg, #43e97b, #38f9d7)', text: '#333' },
-    { bg: 'linear-gradient(135deg, #fa709a, #fee140)', text: '#333' },
-    { bg: 'linear-gradient(135deg, #ff9a9e, #fecfef)', text: '#333' },
-    { bg: 'linear-gradient(135deg, #a8edea, #fed6e3)', text: '#333' },
-    { bg: 'linear-gradient(135deg, #84fab0, #8fd3f4)', text: '#333' }
-];
+function randomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return { r, g, b };
+}
+
+function getluminance(r, g, b) {
+    return 0.299 * r + 0.587 * g + 0.114 * b;
+}
+
+function genColors() {
+    const { r, g, b } = randomColor();
+    const bgColor = `rgb(${r}, ${g}, ${b})`;
+    const luminance = getluminance(r, g, b);
+    const textColor = luminance > 150 ? 'black' : 'white';
+
+    document.body.style.background = bgColor;
+    document.body.style.color = textColor;
+}
 
 const quote = document.getElementById('quote');
 const author = document.getElementById('author');
@@ -51,7 +61,7 @@ async function getNewQuote() {
         quote.textContent = `"${currentQuote}"`;
         author.textContent = currentAuthor;
         updateTwitterLink();
-        changeColors();
+        genColors();
         
         quote.classList.remove('fade-out');
         author.classList.remove('fade-out');
@@ -67,12 +77,5 @@ function updateTwitterLink() {
     twitterBtn.href = tweetUrl;
 }
 
-function changeColors() {
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    document.body.style.background = randomColor.bg;
-    document.body.style.color = randomColor.text;
-}
-
 newQuoteBtn.addEventListener('click', getNewQuote);
-
 getNewQuote();
