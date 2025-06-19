@@ -10,12 +10,14 @@ function getluminance(r, g, b) {
 }
 
 function genColors() {
-    const { r, g, b } = randomColor();
-    const bgColor = `rgb(${r}, ${g}, ${b})`;
-    const luminance = getluminance(r, g, b);
+    const color1 = randomColor();
+    const color2 = randomColor();
+    
+    const bgGradient = `linear-gradient(135deg, rgb(${color1.r}, ${color1.g}, ${color1.b}), rgb(${color2.r}, ${color2.g}, ${color2.b}))`;
+    const luminance = getluminance(color1.r, color1.g, color1.b);
     const textColor = luminance > 150 ? 'black' : 'white';
 
-    document.body.style.background = bgColor;
+    document.body.style.background = bgGradient;
     document.body.style.color = textColor;
 }
 
